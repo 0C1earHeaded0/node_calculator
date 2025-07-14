@@ -1,0 +1,216 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	/* border-collapse: collapse; */
+	border-spacing: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+.header {
+    display: block;
+    font-size: 3vmax;
+    text-align: center;
+    margin-bottom: 1vmax;
+    margin-top: 1vmax;
+
+    font-family: "Rubik Bubbles", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container-bg {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2A7B9B;
+    background: linear-gradient(360deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+}
+
+.container-main {
+    max-width: 535px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.calculator-frame {
+    display: block;
+
+    height: 60%;
+    min-height: 500px;
+
+    padding: 10%;
+    background: #2A7B9B;
+    background: linear-gradient(45deg, rgb(42, 155, 146) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    border-radius: 18px;
+
+    -webkit-box-shadow: -4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: -4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: -4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.calculator-window {
+    text-align: right;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    border-radius: 16px;
+    height: 100px;
+}
+
+.calculator-input {
+    overflow-x: scroll;
+    font-family: "Press Start 2P", system-ui;
+    font-style: normal;
+
+    padding: 10% 10%;
+    font-size: 1.2vmax;
+    font-weight: 600;
+
+
+    /* filter: drop-shadow(1em 1em 5vmax rgba(0, 0, 0, 1)); */
+}
+
+.calc-btns {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    margin: 1vmax;
+
+    border-collapse: collapse;
+
+    gap: 1vmax;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.btn {
+    /* border: solid 1px black; */
+    display: flex;
+
+    user-select: none;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 3vmax;
+    width: 100%;
+    text-align: center;
+    
+    background-color: rgba(239, 255, 19, 0.555);
+    border-radius: 10px;
+
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+
+    -webkit-box-shadow: -4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: -4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: -4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.btn:hover {
+    cursor: pointer;
+    transform: translateY(2px);
+}
+
+.btn:nth-last-child(-n + 1) {
+    grid-column: 3 / 6;
+}
+
+/* .btn:nth-child(1) {
+    grid-column: 1 / 4;
+} */
+
+.operator {
+    background-color: rgb(255, 166, 0);
+}
+
+.first-line-ops {
+    background-color: rgb(255, 136, 0);
+}
+
+@media screen and (width <= 550px) {
+    .container-main {
+        width: 90%;
+    }
+
+    .btn {
+        height: 6vmax;
+    }
+}
+
+@media screen and (550px <= width <= 750px) {
+    .container-main {
+        width: 65%;
+    }
+
+    .btn {
+        height: 6vmax;
+    }
+}
+
+@media screen and (750px <= width <= 1000px) {
+    .container-main {
+        width: 50%;
+    }
+
+    .btn {
+        height: 6vmax;
+    }
+}
+
+@media screen and (1000px <= width <= 1460px) {
+    .container-main {
+        width: 40%;
+    }
+
+    .btn {
+        height: 6vmax;
+    }
+}
