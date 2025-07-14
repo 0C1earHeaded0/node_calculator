@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify ./public/js/utils/main.js ./public/js/utils/keyboardListener.js -o ./public/js/bundle.js -d"
+    "build": "browserify ./public/js/utils/main.js ./public/js/utils/keyboardListener.js -o ./public/js/bundle.js -d",
+    "start": "node ./src/app.js"
   },
   "author": "",
   "license": "ISC",

@@ -5,7 +5,7 @@ const postExpression = async (exp) => {
     let result;
 
     try {
-        result = await axios.post('http://localhost:3000/count', {
+        result = await axios.post('http://localhost/api/count', {
             expression: exp
         });
     } catch (error) {
