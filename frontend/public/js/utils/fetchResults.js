@@ -2,7 +2,7 @@ const postExpression = async (exp) => {
     let response;
 
     try {
-        response = await fetch('http://localhost:3000/count', {
+        response = await fetch('http://192.168.0.12/api/count', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
