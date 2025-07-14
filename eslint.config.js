@@ -6,6 +6,14 @@ export default [
     eslintPluginUnicorn.configs.all,
     js.configs.recommended,
     {
+        ignores: ['public/**/*.js', 'public/**/**/*.js'],
+        languageOptions: {
+            parser: 'babel-eslint',
+            parserOptions: {
+                sourceType: 'module',
+                allowImportExportEverywhere: true
+            },
+        },
         plugins: {
             '@stylistic': stylistic,
         },
@@ -21,5 +29,14 @@ export default [
             '@stylistic/comma-spacing': ['error', {'before': false, 'after': true}],
             '@stylistic/quotes': ['warn', 'single']
         },
+        // 'overrides': [
+        //     {
+        //         'files': ['public/**/*.js'],
+        //         'rules': {
+        //             'no-use-before-define': ['off'],
+        //             'max-lines-per-function': ['off'],
+        //         }
+        //     }
+       // ]
     },
 ];
