@@ -1,0 +1,25 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend-app
+    restart: always
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./backend:/backend
+      - /app/node_modules
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend-app
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./frontend:/frontend
+    depends_on:
+      - backend
