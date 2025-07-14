@@ -1,7 +1,4 @@
-const handleServerResponse = require("./handleServerResult");
-
 const re = /\d+/;
-const calcInput = document.querySelector('.calculator-input');
 
 document.addEventListener('keydown', async (event) => {
     if (re.test(event.key)) {

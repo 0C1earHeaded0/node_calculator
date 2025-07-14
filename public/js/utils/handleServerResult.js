@@ -1,5 +1,3 @@
-const postExpression = require('./fetchResults');
-
 const getExpression = () => {
     return document.querySelector('.calculator-input').innerHTML;
 }
@@ -15,7 +13,5 @@ const handleServerResponse = async () => {
         return;
     }
 
-    document.querySelector('.calculator-input').innerHTML = serverResult.data.result;
+    document.querySelector('.calculator-input').innerHTML = serverResult.result;
 }
-
-module.exports = handleServerResponse;

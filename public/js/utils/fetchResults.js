@@ -1,18 +1,21 @@
-const axios = require('axios/dist/browser/axios.cjs');
-// import { axios } from 'axios/dist/browser/axios.cjs';
-
 const postExpression = async (exp) => {
-    let result;
+    let response;
 
     try {
-        result = await axios.post('http://localhost:3000/count', {
-            expression: exp
+        response = await fetch('http://localhost:3000/count', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                expression: exp
+            })
         });
     } catch (error) {
         throw new Error('Error when fetch result:', error);
     }
 
-    return result;
+    return await response.json();
 }
 
-module.exports = postExpression;
+// module.exports = postExpression;
