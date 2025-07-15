@@ -12,10 +12,10 @@ const postExpression = async (exp) => {
             })
         });
     } catch (error) {
-        throw new Error('Error when fetch result:', error);
+        throw new Error('Error when fetch calculation result:', error);
     }
 
     return await response.json();
 }
 
-// module.exports = postExpression;
+module.exports = postExpression;

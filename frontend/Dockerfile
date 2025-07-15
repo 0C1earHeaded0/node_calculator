@@ -1,7 +1,10 @@
 # Стадия сборки
 FROM node:22-alpine AS build
 WORKDIR /frontend
+COPY package*.json ./
+RUN npm ci
 COPY . .
+RUN npm run build
 
 # Стадия запуска
 FROM nginx:alpine
