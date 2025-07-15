@@ -1,4 +1,4 @@
-const re = /\d+/;
+const re = /^\d$/;
 
 document.addEventListener('keydown', async (event) => {
     if (re.test(event.key)) {
