@@ -99,12 +99,11 @@ html, body {
     justify-content: right;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.2);
-    filter: drop-shadow(1em 1em 5vmax rgba(0, 0, 0, 1));
+    box-shadow: inset 0px 0px 8px 5px rgba(34, 60, 80, 0.2);
     border-radius: 16px;
     height: 100px;
     padding: 10% 10%;
     scrollbar-width: thin;
-    
 }
 
 .calculator-input {
@@ -246,6 +245,7 @@ html, body {
     width: 18rem;
     background-color: rgba(0, 54, 45, 0.541);
     border-radius: 18px 0 0 0;
+    box-shadow: inset 0px 0px 8px 5px rgba(34, 60, 80, 0.2);
 }
 
 .valute-window_shown {
