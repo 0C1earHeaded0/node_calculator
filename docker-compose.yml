@@ -9,7 +9,7 @@ services:
       - "4000:4000"
     volumes:
       - ./backend:/backend
-      - /app/node_modules
+      - /backend/node_modules
 
   frontend:
     build:
@@ -18,8 +18,9 @@ services:
     container_name: frontend-app
     restart: always
     ports:
-      - "80:80"
+      - "7000:80"
     volumes:
-      - ./frontend:/frontend
+      - ./frontend/public:/usr/share/nginx/html
+      - /frontend/node_modules
     depends_on:
       - backend

@@ -1,4 +1,5 @@
-const handleServerResponse = require("./handleServerResult");
+const handleServerResponse = require('../api/calculator/handleServerResult');
+const handleValuteServerResponse = require('../api/valuteRate/handleServerResult');
 
 const nums = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 0
@@ -48,5 +49,18 @@ btns.forEach(async (el) => {
                 await handleServerResponse();
             });
             break;
+    }
+});
+
+document.querySelector('#valute-rate').addEventListener('click', () => {
+    const valuteWindow = document.querySelector('#valute-window');
+    handleValuteServerResponse();
+
+    if (valuteWindow.classList.contains('valute-window_shown')) {
+        valuteWindow.classList.remove('valute-window_shown');
+        valuteWindow.classList.add('valute-window_hidden');
+    } else {
+        valuteWindow.classList.remove('valute-window_hidden');
+        valuteWindow.classList.add('valute-window_shown');
     }
 });

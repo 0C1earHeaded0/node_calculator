@@ -12,6 +12,26 @@
 </head>
 <body>
     <div class="container-bg">
+        <div id="menu">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAXklEQVR4nO3TMQqAMBBE0V/N1Y33dOMxFCGVprDZtXAepEkzEPLB7EnACnQggDbu0jXguJ3rLl2fDO8VwzEZ3r566qViWGM8qj/X/8gd446TyB1XkTvGHSeROzZeOAGWFFJap6wQ3wAAAABJRU5ErkJggg==" alt="menu-2">
+        </div>
+        <div id="side-bar" class="side-bar_hidden">
+            <div class="container">
+                <ul>
+                    <li id="valute-rate" class="li_side-bar">Valute Rate</li>
+                    <li class="li_side-bar"></li>
+                    <li class="li_side-bar"></li>
+                    <li class="li_side-bar"></li>
+                    <li class="li_side-bar"></li>
+                </ul>
+            </div>
+        </div>
+        <div id="valute-window" class="valute-window_hidden">
+            <ul>
+                <li class="valute-rate">€ Курс ЕВРО: <span id="EUR-rate"></span>₽</li>
+                <li class="valute-rate">$ Курс ДОЛЛАРА: <span id="USD-rate"></span>₽</li>
+            </ul>
+        </div>
         <div class="container-main">
             <div class="header .rubik-bubbles-regular">
                 <h1>Simple Calculator</h1>
@@ -50,9 +70,8 @@
         </div>
     </div>
 
-<script src="./js/utils/fetchResults.js"></script>
-<script src="./js/utils/handleServerResult.js"></script>
-<script src="./js/utils/keyboardListener.js"></script>
-<script src="./js/utils/main.js"></script>
+<script src="./js/utils/side-bar.js"></script>
+<script src="./js/bundles/utils_keyboard.bundle.js"></script>
+<script src="./js/bundles/utils_main.bundle.js"></script>
 </body>
 </html>
