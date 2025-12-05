@@ -1,18 +1,18 @@
-const handleServerResponse = require('../api/calculator/handleServerResult');
-const handleValuteServerResponse = require('../api/valuteRate/handleServerResult');
+import handleServerResponse from '../api/calculator/handleServerResult';
+import handleValuteServerResponse from '../api/valuteRate/handleServerResult';
 
 const nums = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 0
 ];
 
-const btns = document.querySelectorAll('.btn');
-const calcInput = document.querySelector('.calculator-input');
+const btns: NodeListOf<Element> = document.querySelectorAll('.btn');
+const calcInput: Element = document.querySelector('.calculator-input');
 
-const onNumClick = (num_btn) => {
+function onNumClick(num_btn: Element) {
     calcInput.innerHTML += num_btn.innerHTML;
 }
 
-btns.forEach(async (el) => {
+btns.forEach(async (el: Element) => {
     if (nums.includes(Number(el.innerHTML))) {
         el.addEventListener('click', () => {
             onNumClick(el);
@@ -40,7 +40,7 @@ btns.forEach(async (el) => {
         case '(':
         case ')':
         case '%':
-            el.addEventListener('click', () => {
+            el.addEventListener('click', async () => {
                 calcInput.innerHTML += el.innerHTML;
             });
             break;
@@ -53,7 +53,7 @@ btns.forEach(async (el) => {
 });
 
 document.querySelector('#valute-rate').addEventListener('click', () => {
-    const valuteWindow = document.querySelector('#valute-window');
+    const valuteWindow: Element = document.querySelector('#valute-window');
     handleValuteServerResponse();
 
     if (valuteWindow.classList.contains('valute-window_shown')) {

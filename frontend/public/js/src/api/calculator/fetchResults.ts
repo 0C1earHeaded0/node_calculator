@@ -1,5 +1,5 @@
-const postExpression = async (exp) => {
-    let response;
+async function postExpression(exp: String) {
+    let response: Response;
 
     try {
         response = await fetch('/api/count', {
@@ -12,10 +12,10 @@ const postExpression = async (exp) => {
             })
         });
     } catch (error) {
-        throw new Error('Error when fetch calculation result:', error);
+        throw new Error('Error when fetch calculation result:' + error);
     }
 
-    return await response.json();
-}
+    return response.json();
+} 
 
-module.exports = postExpression;
+export default postExpression;

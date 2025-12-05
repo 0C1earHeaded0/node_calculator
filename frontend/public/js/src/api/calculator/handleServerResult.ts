@@ -1,10 +1,10 @@
-const postExpression = require('./fetchResults');
+import postExpression from './fetchResults';
 
-const getExpression = () => {
+function getExpression(): string {
     return document.querySelector('.calculator-input').innerHTML;
 }
 
-const handleServerResponse = async () => {
+async function handleServerResponse() {
     let serverResult;
 
     try {
@@ -12,10 +12,9 @@ const handleServerResponse = async () => {
     } catch (err) {
         console.log('Ошибка при вычислении значения сервером.');
         alert("Серверу не удалось обработать выражение.");
-        return;
     }
 
     document.querySelector('.calculator-input').innerHTML = serverResult.result;
 }
 
-module.exports = handleServerResponse;
+export default handleServerResponse;
